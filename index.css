@@ -1,0 +1,89 @@
+body{
+    height: 100vh;
+}
+
+.mainHeader{
+    height: 65px;
+}
+
+.step1 h2{
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.step2 h2{
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.step3 h2{
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.step4 h2{
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.step1 div p{
+    font-size: 20px;
+    font-weight: lighter;
+    margin-right: 10px;
+}
+
+.step2 div p{
+    font-size: 20px;
+    font-weight: lighter;
+    margin-right: 10px;
+}
+
+.step3 div p{
+    font-size: 20px;
+    font-weight: lighter;
+    margin-right: 10px;
+}
+
+.step4 div p{
+    font-size: 20px;
+    font-weight: lighter;
+    margin-right: 10px;
+}
+
+.step1 div select{
+    width: 25%;
+    height: 15%;
+    margin-right: 10px;
+}
+
+.step2 div select{
+    width: 25%;
+    height: 15%;
+    margin-right: 10px;
+}
+
+.step3 div select{
+    width: 25%;
+    height: 15%;
+    margin-right: 10px;
+}
+
+.step4 div select{
+    width: 25%;
+    height: 15%;
+    margin-right: 10px;
+}
+
+button{
+    width: 120px;
+    height: 40px;
+}
+
+.resultHeader{
+    height: 65px;
+    font-size: 40px;
+}
+
+.resultFooter{
+    font-size: 45px;
+}

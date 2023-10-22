@@ -1,15 +1,146 @@
-<!doctype html>
-<html lang="en">
-<head>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
+    <link rel="stylesheet" href="index.css" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
 
     <!-- font awesome -->
-    <link href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
-</head>
-
-<title>Book Generator</title>
+    <link
+      href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="mainHeader bg-dark">
+      <h1 class="text-center text-white">Build Your Own Computer</h1>
+    </header>
+    <!-- main -->
+    <main>
+      <!-- step1 -->
+      <div class="step1 m-2">
+        <h2 class="mb-3">step1: Select Your CPU</h2>
+        <div class="d-flex">
+          <p>Brand</p>
+          <select class="custom-select" id="step1Select">
+            <option selected value="-">-</option>
+            <option value="Intel">Intel</option>
+            <option value="AMD">AMD</option>
+          </select>
+          <p>Model</p>
+          <select class="custom-select" id="step1Model">
+            <option selected>-</option>
+          </select>
+        </div>
+      </div>
+      <!-- step2 -->
+      <div class="step2 m-2">
+        <h2 class="mb-3">step2: Select Your GPU</h2>
+        <div class="d-flex">
+          <p>Brand</p>
+          <select class="custom-select" id="step2Select">
+            <option selected>-</option>
+            <option value="Nvidia">Nvidia</option>
+            <option value="AMD">AMD</option>
+            <option value="Zotac">Zotac</option>
+            <option value="Asus">Asus</option>
+            <option value="MSI">MSI</option>
+            <option value="Gigabyte">Gigabyte</option>
+            <option value="EVGA">EVGA</option>
+            <option value="Sapphire">Sapphire</option>
+            <option value="PowerColor">PowerColor</option>
+            <option value="XFX">XFX</option>
+            <option value="ASRock">ASRock</option>
+            <option value="Gainward">Gainward</option>
+            <option value="PNY">PNY</option>
+            <option value="PwrHis">PwrHis</option>
+          </select>
+          <p>Model</p>
+          <select class="custom-select" id="step2Model">
+            <option selected>-</option>
+          </select>
+        </div>
+      </div>
+      <!-- step3 -->
+      <div class="step3 m-2">
+        <h2 class="mb-3">step3: Select Your Memory Card</h2>
+        <p>How many?</p>
+        <div class="d-flex">
+          <p>How many</p>
+          <select class="custom-select" id="step3">
+            <option selected>-</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <p>Brand</p>
+          <select class="custom-select" id="step3Brand">
+            <option selected>-</option>
+          </select>
+          <p>Model</p>
+          <select class="custom-select" id="step3Model">
+            <option selected>-</option>
+          </select>
+        </div>
+      </div>
+      <!-- step4 -->
+      <div class="step4 m-2">
+        <h2 class="mb-3">step4: Select Your Storage</h2>
+        <div class="d-flex">
+          <p>HDD or SSD</p>
+          <select class="custom-select" id="step4">
+            <option selected>-</option>
+            <option value="hdd">HDD</option>
+            <option value="ssd">SSD</option>
+          </select>
+          <p>Storage</p>
+          <select class="custom-select" id="step4Storage">
+            <option selected>-</option>
+            <option value="12TB">12TB</option>
+            <option value="10TB">10TB</option>
+            <option value="8TB">8TB</option>
+            <option value="6TB">6TB</option>
+            <option value="5TB">5TB</option>
+            <option value="4TB">4TB</option>
+            <option value="3TB">3TB</option>
+            <option value="2TB">2TB</option>
+            <option value="1.5TB">1.5TB</option>
+            <option value="1TB">1TB</option>
+            <option value="500GB">500GB</option>
+            <option value="450GB">450GB</option>
+            <option value="300GB">300GB</option>
+            <option value="250GB">250GB</option>
+          </select>
+          <p>Brand</p>
+          <select class="custom-select" id="step4Brand">
+            <option selected>-</option>
+          </select>
+          <p>Model</p>
+          <select class="custom-select" id="step4Model">
+            <option selected>-</option>
+          </select>
+        </div>
+      </div>
+      <!-- button -->
+      <button type="submit" class="btn btn-primary ml-3 mb-3" id="btn">Add PC</button>
+    </main>
+    <!-- result -->
+    <div class="result bg-primary" id="result">
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
