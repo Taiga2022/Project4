@@ -150,12 +150,13 @@ config.step4Brand.addEventListener("change", (e) => {
   createSelect(e.target.value, storageType, config.step4Model);
 });
 
-const getBenchMark = async(partName, brand, model) => {
-  await fetch(config.url + partName)
+const getBenchMark = (partName, brand, model) => {
+  fetch(config.url + partName)
     .then((response) => response.json())
     .then((data) => {
       for (const key in data) {
         if (data[key]["Brand"] === brand && data[key]["Model"] === model) {
+          console.log(data[key]["Benchmark"])
           return data[key]["Benchmark"];
         }
       }
@@ -172,13 +173,6 @@ const calcScore = () => {
     config.step1[config.step1.selectedIndex].value,
     config.step1Model[config.step1Model.selectedIndex].value
   );
-  console.log(
-    getBenchMark(
-      "cpu",
-      config.step1[config.step1.selectedIndex].value,
-      config.step1Model[config.step1Model.selectedIndex].value
-    )
-  );
   let gpuScore = getBenchMark(
     "gpu",
     config.step2[config.step2.selectedIndex].value,
@@ -188,27 +182,28 @@ const calcScore = () => {
     "ram",
     config.step3Brand[config.step3Brand.selectedIndex].value,
     config.step3Model[config.step3Model.selectedIndex].value
-  );
-  let scoreOfStorage = getBenchMark(
-    config.step4[config.step4.selectedIndex].value,
-    config.step4Brand[config.step4Brand.selectedIndex].value,
-    config.step4Model[config.step4Model.selectedIndex].value
-  );
-  storageScore =
-    config.step4[config.step4.selectedIndex].value === "ssd"
+    );
+    let scoreOfStorage = getBenchMark(
+      config.step4[config.step4.selectedIndex].value,
+      config.step4Brand[config.step4Brand.selectedIndex].value,
+      config.step4Model[config.step4Model.selectedIndex].value
+      );
+      console.log(cpuScore)
+      storageScore =
+      config.step4[config.step4.selectedIndex].value === "ssd"
       ? parseInt(scoreOfStorage * 0.1)
       : parseInt(scoreOfStorage * 0.025);
   allScore.gaming =
     parseInt(cpuScore * 0.25 + gpuScore * 0.6 + ramScore * 0.125) +
     storageScore;
-  allScore.work = parseInt(
+    allScore.work = parseInt(
     cpuScore * 0.6 + gpuScore * 0.25 + ramScore * 0.1 + scoreOfStorage * 0.05
   );
-  //console.log(cpuScore)
+  // console.log(allScore)
   return allScore;
 };
 
-count = 0;
+let count = 0;
 config.button.addEventListener("click", () => {
   result = document.getElementById("result");
   count += 1;
